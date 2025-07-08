@@ -1,4 +1,4 @@
-# **UTP**
+# **UTP 💻**
 
 *🇪🇳🇬*
 
@@ -13,7 +13,7 @@ Este repositorio contiene casi todas las tareas, proyectos y espero que teoria q
 Por Carlos Eduardo Grisales Restrepo.
 
 ## **Subjects/Materias**
-- ### **Programacion I**
-- ### **Programacion II**
-- ### **Estructuras de Datos**
-- ### **Programacion III**
+- ### **Programacion I 🚀**
+- ### **Programacion II ⚙️**
+- ### **Estructuras de Datos 🤖**
+- ### **Programacion III 🐍**
