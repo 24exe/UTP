@@ -14,6 +14,22 @@ Por Carlos Eduardo Grisales Restrepo.
 
 ## **Subjects/Materias**
 - ### **Programming I / Programacion I🚀**
+  - *Teacher/Docente: Cesar Manuel Castillo Rodriguez* (⭐⭐⭐⭐)
+  - *Language/Lenguaje: DrRacket*
+  
 - ### **Programming II / Programacion II ⚙️**
+  - *Teacher/Docente: Felipe Gutiérrez Isaza* (⭐)
+  - *Language/Lenguaje: C++*
+  - *framework: QT*
 - ### **Data Structures / Estructuras de Datos 🤖**
+  - *Teacher/Docente: Gustavo Adolfo Gutierrez Sabogal* (⭐⭐⭐⭐)
+  - *Language/Lenguaje: C++*
 - ### **Programming III / Programacion III 🐍**
+  - *Teacher/Docente: Ramiro Andrés Barrios Valencia* (⭐⭐⭐)
+  - *Language/Lenguaje: PROLOG/Python*
+
+
+## **TO DO LIST**
+1. Subir archivos del resto de materias.
+2. Terminar los archivos de estructuras y las implementaciones.
+3. Añadir otras materias como Lab. de Electronica y Gramaticas. 
