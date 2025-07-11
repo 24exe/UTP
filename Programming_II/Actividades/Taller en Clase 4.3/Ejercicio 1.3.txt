@@ -1,0 +1,135 @@
+/*
+Programación II
+Grupo: 5
+Profesor: Felipe Gutiérrez Isaza
+Nombre: Carlos Eduardo Grisales Restrepo
+Codigo: 1055750849
+Tema: Ciclos (For)
+
+Taller en clase 4: Ejercicio 1.
+*/
+
+//BIBLIOTECAS
+#include <iostream>
+#include <random> //para generar el número aleatorio.
+
+/*
+NOTA: notese que estos siguen siendo números pseudo-aleatorios y este puede ser un proceso
+mucho mas complejo que el comunente usado con la libreria time y las funciones rand() y srand()
+*/
+
+using namespace std;
+
+int main (){
+	setlocale(LC_ALL, "spanish");
+	//para caracteres especiales en español, no es necesario añadir ninguna biblioteca.
+	
+	int num, randomnum, fail;
+	cout<<"---Ejercicio 1: Adivina el número aleatorio---\n\n";
+	
+	random_device rd; //generador de números aleatorios.
+	
+	 mt19937 gen(rd()); 
+	/* 
+		-Utilizamos Mersenne Twister como algoritmo generador (mt19937):
+	 	
+		 "The Mersenne Twister is a general-purpose pseudorandom number generator (PRNG) developed 
+		 in 1997 by Makoto Matsumoto and Takuji Nishimura. 
+		 Its name derives from the fact that its period length is chosen to be a Mersenne prime
+		 (número primo de Mersenne).
+		 The Mersenne Twister was designed specifically to rectify most of the 
+		 flaws found in older PRNGs.
+		 The most commonly used version of the Mersenne Twister algorithm is based on 
+		 the Mersenne prime 2^19937 - 1. The standard implementation of that, 
+		 MT19937, uses a 32-bit word length. There is another implementation (with five variants) 
+		 that uses a 64-bit word length, MT19937-64; it generates a different sequence."
+		 
+		 via: https://en.wikipedia.org/wiki/Mersenne_Twister
+		 
+		-"gen" es la semilla que se usara para general los números, recordar que estos son pseudo-aleatorios,
+		no aleatorios.
+	*/
+	uniform_int_distribution<int> distribution(1, 100); 
+	/*distribución uniforme entre 1 y 100 (limites inferior y superior)*/
+	
+	randomnum = distribution(gen); //generamos el número aleatorio
+	
+	cout<<"Adivina el número que estoy pensando, esta entre 1 y 100.\n";
+	cin>>num;
+	
+	/*
+		
+	*/
+	for (int i = 0; i < 2; i++){
+	    string estado;
+	    if(i == 0){
+	        if (num == randomnum){
+	            cout<<"¡Excelente, estaba pensado en ese número! \n";
+	            break;
+	        }
+	        else{
+	            if(num > randomnum){
+	                cout<<"Es un número mas pequeño...\n";
+	                cout<<"Te quedan "<<2-i<<" intentos.\n";
+	                fail = i+1;
+	                cin>>num;
+	                
+	            }
+	            if(num < randomnum){
+	                cout<<"Es un número mas grande...\n";
+	                cout<<"Te quedan "<<2-i<<" intentos.\n";
+	                fail = i+1;
+	                cin>>num;
+	            }
+	        }
+		}
+		else{
+		    if (num == randomnum){
+	            cout<<"¡Excelente, estaba pensado en ese número! \n";
+	            break;
+	        }
+	        else{
+	            if(num > randomnum){
+	                cout<<"Es un número mas pequeño...\n";
+	                estado = (randomnum % 2 == 0)? "par...":" impar...";
+	                cout<<"Ademas es "<< estado <<endl;
+	                /*
+	               -Prueba de que el operador ternario puede ser de utilidad, ya que resume la secuencia de abajo en una sola linea.
+	               
+	                if (num % 2 = 0){
+	                    cout<<"Ademas es par...\n";
+	                }
+	                else{
+	                    cout<<"Ademas es impar...\n";
+	                }
+	                */    
+	                cout<<"Te quedan "<<2-i<<" intentos.\n";
+	                
+	                fail = i+1;
+	                cin>>num;
+	                
+	            }
+	            if(num < randomnum){
+	                cout<<"Es un número mas grande...\n";
+	                estado = (randomnum % 2 == 0)? "par...":" impar...";
+	                cout<<"Ademas es "<< estado <<endl;
+	                cout<<"Te quedan "<<2-i<<" intentos.\n"; 
+	                fail = i+1;
+	                cin>>num;
+	            }
+	        }
+		}
+		if(i == 1){
+		    
+		}
+		
+	}
+	if(fail = 3){
+	    cout<<"¡Que lastima! la proxima lo conseguiras.\n";
+	    cout<<"El número aleatorio era: "<<randomnum<<endl;
+	}
+	
+	
+	system ("pause");
+	return 0;
+}

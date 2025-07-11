@@ -1,0 +1,38 @@
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int uno, dos;
+    cout<<"uno: "; cin>>uno;
+    cout<<"dos: "; cin>>dos;
+    int matrix[uno][dos], suma[uno];
+    
+    for (int i = 0; i < uno; i++ ){
+        for(int j = 0; j < dos; j++){
+            cout<<"matrix ["<<i<<"]["<<j<<"] = ";
+            cin>>matrix[i][j];
+            suma[i] = suma[i]+matrix[i][j];
+        }
+    }
+    
+    //imprimir
+    for (int i = 0; i < uno; i++ ){
+        cout<<"Parte "<<i+1<<endl; 
+        for(int j = 0; j < dos; j++){
+            cout<<matrix[i][j];
+        }
+        cout<<endl;
+    }
+    
+    //imprimir 2
+    
+    for(int k = 0; k < uno; k++){
+        cout<<"suma parte "<<k+1<<": "<<suma[k]<<endl;
+    }
+
+    return 0;
+}
+
