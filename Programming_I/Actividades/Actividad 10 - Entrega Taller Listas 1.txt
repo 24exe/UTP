@@ -1,0 +1,102 @@
+Nombre: Carlos Eduardo Grisales Restrepo 
+Código: 1055750849
+
+Actividad 10 - Entrega Taller Listas 1
+
+--------AVISO------------
+
+cada programa esta hecho para provarse individualmente
+
+-------------------------
+
+#lang racket
+
+;Contrato: Incrementar: lista -> lista con cada elemento incrementado en 100 
+;Propósito: función que incremente en 100 los números de una lista.
+;Ejemplo: ((listfun '(1 2 3 4 5)) retorna '(101 102 103 104 105)
+;Parámetros: list1
+
+;variable global que contiene la lista que se va a incrementar
+(define list1 '( 1 2 3 4 5))
+
+;función auxiliar que incrementa cada elemento de la lista en 100
+(define (increase n)
+  (+ n 100)
+  )
+
+;función principal para incrementar en 1oo los números de la lista
+(define (listfun list)
+  (map increase list)
+  )
+
+;prueba
+(listfun list1)
+
+
+-------------------------------------------------------------
+
+#lang racket
+
+;Contrato: Unión: lista1 lista2 -> lista unida
+;Propósito: unir dos listas dadas por el usuario sin el uso de la función predefinida "append" o "map"
+;Ejemplo: (bond '(1 2 3) '(4 5 6)) retorna '(1 2 3 4 5 6)
+;Parámetros: lista1 lista2
+
+;Variables globales de las listas que luego seran llenadas
+(define listfinal1 '())
+(define listfinal2 '())
+
+;Función Auxiliar que une las dos listas
+(define (bond list1 list2 cont)
+  (cond
+    ((null? list) (displayln "error"))
+    ((= cont (length list1)) (displayln list2))
+    (else (begin
+            (set! list2 (cons (list-ref (reverse list1) cont) list2))
+            (bond list1 list2 (+ cont 1))
+            ))
+    )
+  )
+
+;Función Principal que pregunta al usuario las listas 
+(define (fun)
+  (displayln "digite una lista (entre parentesis): ")
+  (set! listfinal1 (read))
+  (displayln "digite otra lista (entre parentesis): ")
+  (set! listfinal2 (read))
+  (bond listfinal1 listfinal2 0)
+  )
+
+;Prueba
+(fun)
+
+
+--------------------------------------------
+
+#lang racket
+
+;Contrato: Reversa: lista -> listsa invertida
+;Propósito: Invertir el orden de elementos de una lista sin usar la función predeterminada "reverse"
+;Ejemplo: (reversefun '(1 2 3) retornara '(3 2 1)
+;Parámetros: num
+
+;Variables Globales
+(define listex '(1 2 3 4 5 6 7 8 9))
+(define listreverse '())
+
+;Función Principal que se encarga de invertir los elementos de una lista 
+(define (reversefun list cont)
+  (cond
+    ((null? list) (displayln "error"))
+    ((= cont (length listex)) (displayln listreverse))
+    (else (begin
+            (set! listreverse (cons (list-ref listex cont) listreverse))
+            (reversefun list (+ cont 1))
+            ))
+    )
+  )
+
+;Prueba
+(reversefun listex 0)
+
+
