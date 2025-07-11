@@ -20,7 +20,7 @@ Por Carlos Eduardo Grisales Restrepo.
 - ### **Programming II / Programacion II ⚙️**
   - *Teacher/Docente: Felipe Gutiérrez Isaza* (⭐)
   - *Language/Lenguaje: C++*
-  - *framework: QT*
+  - *Framework: QT*
 - ### **Data Structures / Estructuras de Datos 🤖**
   - *Teacher/Docente: Gustavo Adolfo Gutierrez Sabogal* (⭐⭐⭐⭐)
   - *Language/Lenguaje: C++*
