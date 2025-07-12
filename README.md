@@ -13,18 +13,22 @@ Este repositorio contiene casi todas las tareas, proyectos y espero que teoria q
 Por Carlos Eduardo Grisales Restrepo.
 
 ## **Subjects/Materias**
-- ### **Programming I / Programacion I🚀**
+- ### **Programming I / Programacion I 🚀**
+  - *Subject Code/ Código de la Materia: IS105*
   - *Teacher/Docente: Cesar Manuel Castillo Rodriguez* (⭐⭐⭐⭐)
   - *Language/Lenguaje: DrRacket*
   
 - ### **Programming II / Programacion II ⚙️**
+  - *Subject Code/ Código de la Materia: IS284*
   - *Teacher/Docente: Felipe Gutiérrez Isaza* (⭐)
   - *Language/Lenguaje: C++*
   - *Framework: QT*
 - ### **Data Structures / Estructuras de Datos 🤖**
+  - *Subject Code/ Código de la Materia: IS304*
   - *Teacher/Docente: Gustavo Adolfo Gutierrez Sabogal* (⭐⭐⭐⭐)
   - *Language/Lenguaje: C++*
 - ### **Programming III / Programacion III 🐍**
+  - *Subject Code/ Código de la Materia: IS453*
   - *Teacher/Docente: Ramiro Andrés Barrios Valencia* (⭐⭐⭐)
   - *Language/Lenguaje: PROLOG/Python*
 
