@@ -3,13 +3,13 @@
 
 ## **Integrantes del proyecto con sus respectivos códigos.**
 
-•	Carlos Eduardo Grisales Restrepo	1055750849
+•	*Carlos Eduardo Grisales Restrepo	1055750849*
 
-•	Maycol Becerra Castro			1221714653
+•	*Maycol Becerra Castro			1221714653*
 
-•	David Stiven Rivas Obando		1004685578 
+•	*David Stiven Rivas Obando		1004685578*
 
-•	Pablo León Rueda			1123890964
+•	*Pablo León Rueda			1123890964*
 
 ## **Aplciacion**
 ### ***Funciones que tiene la App***
