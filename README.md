@@ -31,7 +31,10 @@ Por Carlos Eduardo Grisales Restrepo.
   - *Subject Code/ Código de la Materia: IS453*
   - *Teacher/Docente: Ramiro Andrés Barrios Valencia* (⭐⭐⭐)
   - *Language/Lenguaje: PROLOG/Python*
-
+- ### **Electronics Laboratory / Laboratorio de Electrónica 📟**
+  - *Subject Code/ Código de la Materia: IS543*
+  - *Teacher/Docente: Juan David Hincapié Zea* (⭐⭐⭐⭐⭐)
+  - *Language/Lenguaje: VHDL*
 
 ## **TO DO LIST**
 1. Subir archivos del resto de materias.
