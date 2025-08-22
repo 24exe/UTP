@@ -11,7 +11,7 @@
 
 •	*Pablo León Rueda			1123890964*
 
-## **Aplciacion**
+## **Apliciacion**
 ### ***Funciones que tiene la App***
 
 1. Lapiz funcional.
