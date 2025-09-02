@@ -1,4 +1,4 @@
-# # **Informe Técnico del Proyecto en el framework QT – Aplicativo tipo ‘Paint’.**
+# **Informe Técnico del Proyecto en el framework QT – Aplicativo tipo ‘Paint’.**
 
 
 ## **Integrantes del proyecto con sus respectivos códigos.**
