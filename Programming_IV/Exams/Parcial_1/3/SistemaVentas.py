@@ -30,7 +30,7 @@ Clase Producto:
 • Atributos:
     o Nombre (cadena de texto)
     o ID (entero)
-     Precio (flotante)
+    o Precio (flotante)
     o Cantidad en inventario (entero)
 
 • Métodos:
