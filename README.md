@@ -48,7 +48,7 @@ Por Carlos Eduardo Grisales Restrepo.
   - *Teacher/Docente:   Cesar Manuel Castillo Rodriguez* **(CURSANDOLA)**
   - *Language/Lenguaje: SQL*
 - ### **Digital Electronics Laboratory / Laboratorio de Electrónica Digital 💡**
-  - *Subject Code/ Código de la Materia: IS543*
+  - *Subject Code/ Código de la Materia: IS773*
   - *Teacher/Docente: Jovanny Bedoya Guapacha* **(CURSANDOLA)**
   - *Language/Lenguaje: VeryLog*
   
