@@ -47,6 +47,11 @@ Por Carlos Eduardo Grisales Restrepo.
   - *Subject Code/ Código de la Materia: IS644*
   - *Teacher/Docente:   Cesar Manuel Castillo Rodriguez* **(CURSANDOLA)**
   - *Language/Lenguaje: SQL*
+- ### **Digital Electronics Laboratory / Laboratorio de Electrónica Digital 💡**
+  - *Subject Code/ Código de la Materia: IS543*
+  - *Teacher/Docente: Jovanny Bedoya Guapacha* **(CURSANDOLA)**
+  - *Language/Lenguaje: VeryLog*
+  
 ## **TO DO LIST**
 1. Subir archivos del resto de materias.
 2. Terminar los archivos de estructuras y las implementaciones.
