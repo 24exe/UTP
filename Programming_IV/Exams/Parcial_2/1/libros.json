@@ -1,0 +1,16 @@
+[
+    {
+        "titulo": "1984",
+        "autor": "Geroge Orwell",
+        "year": 19450,
+        "editorial": "Penguin Reader",
+        "genero": "Distopia"
+    },
+    {
+        "titulo": "Cien Años de Soledad",
+        "autor": "Gabriel Garcia Marquez",
+        "year": 1970,
+        "editorial": "Editorial X",
+        "genero": "Realismo Mágico"
+    }
+]
