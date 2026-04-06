@@ -37,9 +37,18 @@ Por Carlos Eduardo Grisales Restrepo.
   - *Language/Lenguaje: VHDL*
 - ### **Programming IV / Programacion IV 📦**
   - *Subject Code/ Código de la Materia: IS553*
-  - *Teacher/Docente:   Andres Felipe Ramirez Correa* **(CURSANDOLA)**
+  - *Teacher/Docente:   Andres Felipe Ramirez Correa* **(⭐⭐⭐⭐⭐)**
   - *Language/Lenguaje: Python*
+- ### **Computer Graphics / Computación Grafica 🎨​**
+  - *Subject Code/ Código de la Materia: IS623*
+  - *Teacher/Docente:   Andres Felipe Ramirez Correa* **(CURSANDOLA)**
+  - *Language/Lenguaje: JavaScript*
+- ### ** Data Bases / Bases de Datos 📊**
+  - *Subject Code/ Código de la Materia: IS644*
+  - *Teacher/Docente:   Cesar Manuel Castillo Rodriguez* **(CURSANDOLA)**
+  - *Language/Lenguaje: SQL*
 ## **TO DO LIST**
 1. Subir archivos del resto de materias.
 2. Terminar los archivos de estructuras y las implementaciones.
-3. Añadir otras materias como Lab. de Electronica y Gramaticas. 
+3. Añadir otras materias como Lab. de Electronica y Gramaticas.
+4. Subir proyecto final de Programación IV.
