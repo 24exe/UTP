@@ -16,7 +16,7 @@ El archivo `sudoku.py` implementa el solucionador principal del Sudoku Killer. E
 Este solucionador está diseñado para abordar cualquier configuración válida de Sudoku Killer, asegurando que todas las restricciones se cumplan y produciendo una solución óptima.
 
 ## Creadores
-- Juan alejandro Salgado, Carlos grisales, Angel Mora, Santiago Rodriguez,
+- Juan Alejandro Salgado, Carlos E. Grisales, Angel Mora, Santiago Rodriguez,
 
 ## Requisitos
 - Python 3.8 o superior instalado.
@@ -69,6 +69,9 @@ Este solucionador está diseñado para abordar cualquier configuración válida 
 
 ## Instrucciones de Uso
 1. Asegúrate de tener Python instalado.
-2. Clona este repositorio en tu máquina local:
+2. Corre el archivo 'main.py'
+3. Clona este repositorio en tu máquina local:
    ```bash
    git clone <https://github.com/NumMy0/Sudoku-killer-python>
+
+**NOTA: ESTE PROYECTO ES UNA COPIA DEL REPOSITORIO DE NumMy0, SIMPLEMENTE UNA COPIA DE SEGURIDAD**
