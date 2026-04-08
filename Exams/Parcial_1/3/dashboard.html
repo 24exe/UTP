@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanzas - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="dashboard-page">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <span class="logo-icon"></span>
+                <h1>Nequi Sin Caidas</h1>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">Inicio</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon"></span>
+                <span class="nav-text">Ingresos</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon"></span>
+                <span class="nav-text">Gastos</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon"></span>
+                <span class="nav-text">Reportes</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="index.html" class="logout-btn">
+                <span class="nav-icon"></span>
+                <span class="nav-text">Cerrar sesión</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="main-header">
+            <h2>Panel de Control</h2>
+            <div class="user-info">
+                <span class="user-avatar"></span>
+                <span class="user-name">Usuario</span>
+            </div>
+        </header>
+
+        <div class="dashboard-grid">
+            <div class="card balance-card">
+                <div class="card-header">
+                    <span class="card-icon"></span>
+                    <span class="card-title">Saldo Total</span>
+                </div>
+                <div class="card-value">$12,450.00</div>
+                <div class="card-footer">
+                    <span class="trend positive">↑ 5.2%</span>
+                    <span class="trend-text">vs mes anterior</span>
+                </div>
+            </div>
+
+            <div class="card income-card">
+                <div class="card-header">
+                    <span class="card-icon"></span>
+                    <span class="card-title">Ingresos del Mes</span>
+                </div>
+                <div class="card-value">$8,200.00</div>
+                <div class="card-footer">
+                    <span class="trend positive">↑ 12.8%</span>
+                    <span class="trend-text">vs mes anterior</span>
+                </div>
+            </div>
+
+            <div class="card expense-card">
+                <div class="card-header">
+                    <span class="card-icon"></span>
+                    <span class="card-title">Gastos del Mes</span>
+                </div>
+                <div class="card-value">$3,750.00</div>
+                <div class="card-footer">
+                    <span class="trend negative">↓ 3.1%</span>
+                    <span class="trend-text">vs mes anterior</span>
+                </div>
+            </div>
+
+            <div class="card chart-card">
+                <div class="card-header">
+                    <span class="card-icon"></span>
+                    <span class="card-title">Resumen Semanal</span>
+                </div>
+                <div class="chart-placeholder">
+                    <div class="bar bar-1"></div>
+                    <div class="bar bar-2"></div>
+                    <div class="bar bar-3"></div>
+                    <div class="bar bar-4"></div>
+                    <div class="bar bar-5"></div>
+                    <div class="bar bar-6"></div>
+                    <div class="bar bar-7"></div>
+                </div>
+            </div>
+
+            <div class="card list-card">
+                <div class="card-header">
+                    <span class="card-icon"></span>
+                    <span class="card-title">Últimas Transacciones</span>
+                </div>
+                <ul class="transaction-list">
+                    <li class="transaction-item">
+                        <span class="trans-icon">🛒</span>
+                        <span class="trans-name">Supermercado</span>
+                        <span class="trans-amount negative">-$85.00</span>
+                    </li>
+                    <li class="transaction-item">
+                        <span class="trans-icon">💼</span>
+                        <span class="trans-name">Salario</span>
+                        <span class="trans-amount positive">+$2,500.00</span>
+                    </li>
+                    <li class="transaction-item">
+                        <span class="trans-icon"></span>
+                        <span class="trans-name">Servicios</span>
+                        <span class="trans-amount negative">-$120.00</span>
+                    </li>
+                    <li class="transaction-item">
+                        <span class="trans-icon"></span>
+                        <span class="trans-name">Restaurante</span>
+                        <span class="trans-amount negative">-$45.00</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card progress-card">
+                <div class="card-header">
+                    <span class="card-icon"></span>
+                    <span class="card-title">Presupuesto</span>
+                </div>
+                <div class="budget-item">
+                    <span class="budget-label">Ahorros</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%"></div>
+                    </div>
+                    <span class="budget-value">75%</span>
+                </div>
+                <div class="budget-item">
+                    <span class="budget-label">Ocio</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 45%"></div>
+                    </div>
+                    <span class="budget-value">45%</span>
+                </div>
+                <div class="budget-item">
+                    <span class="budget-label">Alimentación</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 60%"></div>
+                    </div>
+                    <span class="budget-value">60%</span>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

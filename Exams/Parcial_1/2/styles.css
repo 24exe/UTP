@@ -1,0 +1,694 @@
+/* ===================================================
+   InformateCo — Estilos principales
+   =================================================== */
+
+/* --- Variables de color y tipografía --- */
+:root {
+  --color-primario:   #c0392b;
+  --color-secundario: #1a252f;
+  --color-acento:     #e67e22;
+  --color-fondo:      #f4f1ec;
+  --color-blanco:     #ffffff;
+  --color-texto:      #2c3e50;
+  --color-texto-suave:#666666;
+  --color-borde:      #ddd;
+  --color-nav:        #1a252f;
+
+  --fuente-titular: 'Playfair Display', Georgia, serif;
+  --fuente-cuerpo:  'Source Serif 4', Georgia, serif;
+
+  --sombra-tarjeta: 0 2px 8px rgba(0,0,0,0.10);
+  --radio:          4px;
+}
+
+/* --- Reset básico --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Clase utilitaria para accesibilidad (solo para lectores de pantalla) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+body {
+  font-family: var(--fuente-cuerpo);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-primario);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ===================================================
+   HEADER
+   =================================================== */
+.site-header {
+  background-color: var(--color-blanco);
+  border-bottom: 3px solid var(--color-primario);
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 20px;
+  background-color: var(--color-secundario);
+  color: #aaa;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.header-logo {
+  text-align: center;
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.logo {
+  font-family: var(--fuente-titular);
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.logo-principal {
+  color: var(--color-secundario);
+}
+
+.logo-acento {
+  color: var(--color-primario);
+}
+
+.logo-co {
+  color: var(--color-acento);
+}
+
+.logo-slogan {
+  font-size: 0.82rem;
+  color: var(--color-texto-suave);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* Banda de últimas noticias */
+.header-breaking {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 20px;
+  background-color: #fff8f0;
+  border-top: 1px solid #fce8d0;
+  overflow: hidden;
+}
+
+.breaking-label {
+  background-color: var(--color-primario);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.breaking-text {
+  font-size: 0.83rem;
+  color: var(--color-texto);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===================================================
+   NAVEGACIÓN
+   =================================================== */
+.navbar {
+  background-color: var(--color-nav);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-link {
+  display: block;
+  color: #ccc;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 12px 16px;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--color-blanco);
+  border-bottom-color: var(--color-primario);
+}
+
+.nav-link--activo {
+  color: var(--color-blanco);
+  border-bottom-color: var(--color-acento);
+}
+
+/* ===================================================
+   LAYOUT PRINCIPAL (grid de 2 columnas)
+   =================================================== */
+.layout-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 24px auto;
+  padding: 0 20px;
+}
+
+/* ===================================================
+   MAIN CONTENT
+   =================================================== */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Títulos de sección */
+.seccion-titulo {
+  font-family: var(--fuente-titular);
+  font-size: 1.3rem;
+  color: var(--color-secundario);
+  border-bottom: 2px solid var(--color-primario);
+  padding-bottom: 6px;
+  margin-bottom: 18px;
+}
+
+/* ===================================================
+   ARTÍCULO DESTACADO
+   =================================================== */
+.articulo--destacado {
+  background: var(--color-blanco);
+  box-shadow: var(--sombra-tarjeta);
+  border-radius: var(--radio);
+  overflow: hidden;
+}
+
+.articulo--destacado .articulo-imagen img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+}
+
+.articulo--destacado figcaption {
+  font-size: 0.75rem;
+  color: var(--color-texto-suave);
+  padding: 5px 16px;
+  background: #f8f8f8;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.articulo--destacado .articulo-contenido {
+  padding: 20px 24px 24px;
+}
+
+.articulo--destacado .articulo-titulo--grande {
+  font-family: var(--fuente-titular);
+  font-size: 1.9rem;
+  line-height: 1.25;
+  margin: 10px 0 12px;
+  color: var(--color-secundario);
+}
+
+.articulo--destacado .articulo-titulo--grande a:hover {
+  color: var(--color-primario);
+}
+
+.articulo-bajada {
+  font-size: 1rem;
+  color: var(--color-texto);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* ===================================================
+   GRILLA DE NOTICIAS (3 columnas con CSS Grid)
+   =================================================== */
+.grilla-noticias {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Hace que la primera tarjeta ocupe 2 columnas */
+.grilla-noticias .articulo--tarjeta:first-child {
+  grid-column: span 2;
+}
+
+.articulo--tarjeta {
+  background: var(--color-blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-tarjeta);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.articulo--tarjeta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.13);
+}
+
+.articulo--tarjeta .articulo-imagen img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.articulo--tarjeta:first-child .articulo-imagen img {
+  height: 220px;
+}
+
+.articulo--tarjeta .articulo-contenido {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.articulo-titulo {
+  font-family: var(--fuente-titular);
+  font-size: 1.05rem;
+  line-height: 1.35;
+  margin: 8px 0 10px;
+  color: var(--color-secundario);
+}
+
+.articulo-titulo a:hover {
+  color: var(--color-primario);
+}
+
+.articulo-descripcion {
+  font-size: 0.87rem;
+  color: var(--color-texto-suave);
+  line-height: 1.55;
+  flex: 1;
+  margin-bottom: 10px;
+}
+
+/* ===================================================
+   META DE ARTÍCULO (autor, fecha, leer más)
+   =================================================== */
+.articulo-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  color: var(--color-texto-suave);
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
+.articulo-autor {
+  font-size: 0.78rem;
+}
+
+.articulo-leermas {
+  margin-left: auto;
+  color: var(--color-primario);
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+.articulo-leermas:hover {
+  text-decoration: underline;
+}
+
+/* ===================================================
+   CATEGORÍAS
+   =================================================== */
+.articulo-categoria {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+
+.categoria--verde  { background: #e8f5e9; color: #2e7d32; }
+.categoria--azul   { background: #e3f2fd; color: #1565c0; }
+.categoria--rojo   { background: #ffebee; color: #c62828; }
+.categoria--morado { background: #f3e5f5; color: #6a1b9a; }
+.categoria--amarillo { background: #fff8e1; color: #e65100; }
+
+/* ===================================================
+   SECCIÓN OPINIÓN
+   =================================================== */
+.seccion-opinion {
+  background: var(--color-blanco);
+  border-radius: var(--radio);
+  padding: 20px 24px;
+  box-shadow: var(--sombra-tarjeta);
+}
+
+.opinion-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.opinion-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.opinion-card:last-child {
+  border-bottom: none;
+}
+
+.opinion-autor-img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--color-secundario);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.opinion-card h4 {
+  font-family: var(--fuente-titular);
+  font-size: 0.95rem;
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+
+.opinion-autor-nombre {
+  font-size: 0.78rem;
+  color: var(--color-primario);
+  font-weight: 600;
+}
+
+/* ===================================================
+   SIDEBAR (barra lateral)
+   =================================================== */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar-widget {
+  background: var(--color-blanco);
+  border-radius: var(--radio);
+  padding: 18px;
+  box-shadow: var(--sombra-tarjeta);
+}
+
+.widget-titulo {
+  font-family: var(--fuente-titular);
+  font-size: 1rem;
+  color: var(--color-secundario);
+  border-bottom: 2px solid var(--color-primario);
+  padding-bottom: 6px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Más leídas */
+.widget-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.widget-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--color-borde);
+}
+
+.widget-item:last-child {
+  border-bottom: none;
+}
+
+.item-numero {
+  font-family: var(--fuente-titular);
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #e0d5c5;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 28px;
+}
+
+.item-link {
+  font-size: 0.83rem;
+  line-height: 1.45;
+  color: var(--color-texto);
+}
+
+.item-link:hover {
+  color: var(--color-primario);
+}
+
+/* Widget Clima */
+.clima-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.clima-ciudad {
+  display: flex;
+  flex-direction: column;
+  background: #f8f5f0;
+  border-radius: var(--radio);
+  padding: 10px;
+  text-align: center;
+}
+
+.clima-nombre {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-texto-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.clima-temp {
+  font-family: var(--fuente-titular);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-secundario);
+  margin: 4px 0 2px;
+}
+
+.clima-desc {
+  font-size: 0.75rem;
+  color: var(--color-texto-suave);
+}
+
+/* Newsletter */
+.widget-texto {
+  font-size: 0.83rem;
+  color: var(--color-texto-suave);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.newsletter-input {
+  padding: 9px 12px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  font-size: 0.85rem;
+  font-family: var(--fuente-cuerpo);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.newsletter-input:focus {
+  border-color: var(--color-primario);
+}
+
+.newsletter-btn {
+  padding: 9px;
+  background-color: var(--color-primario);
+  color: white;
+  border: none;
+  border-radius: var(--radio);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.newsletter-btn:hover {
+  background-color: #a93226;
+}
+
+/* Redes sociales */
+.redes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.red-social {
+  display: block;
+  padding: 8px 10px;
+  border-radius: var(--radio);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+  transition: opacity 0.2s;
+}
+
+.red-social:hover {
+  opacity: 0.85;
+  color: white;
+}
+
+.red--twitter   { background: #1da1f2; }
+.red--instagram { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); }
+.red--facebook  { background: #1877f2; }
+.red--youtube   { background: #ff0000; }
+
+/* ===================================================
+   FOOTER
+   =================================================== */
+.site-footer {
+  background-color: var(--color-secundario);
+  color: #ccc;
+  margin-top: 40px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 32px;
+}
+
+.footer-titulo {
+  font-family: var(--fuente-titular);
+  color: var(--color-blanco);
+  font-size: 1rem;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #3a4a5a;
+}
+
+.footer-texto {
+  font-size: 0.83rem;
+  line-height: 1.65;
+  color: #aaa;
+}
+
+.footer-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-lista a {
+  font-size: 0.83rem;
+  color: #aaa;
+  transition: color 0.2s;
+}
+
+.footer-lista a:hover {
+  color: var(--color-blanco);
+}
+
+.footer-contacto {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-contacto p {
+  font-size: 0.83rem;
+  color: #aaa;
+}
+
+.footer-bottom {
+  border-top: 1px solid #2c3e50;
+  padding: 14px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #888;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.footer-credito {
+  font-style: italic;
+  color: #666;
+}
