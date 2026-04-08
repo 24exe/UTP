@@ -1,0 +1,709 @@
+/* ==========================================================================
+   ESTILOS PRINCIPALES - Dashboard de Control Financiero
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------- */
+/* RESET BÁSICO - Elimina márgenes y paddings por defecto del navegador      */
+/* -------------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* -------------------------------------------------------------------------- */
+/* VARIABLES CSS - Paleta de colores para todo el documento                  */
+/* Se usan variables para mantener consistencia y facilitar cambios         */
+/* -------------------------------------------------------------------------- */
+:root {
+    /* Colores del tema oscuro */
+    --bg-dark: #0f0f0f;           /* Color de fondo principal de la página */
+    --surface: #1a1a1a;           /* Color de fondo de las tarjetas */
+    --surface-elevated: #252525; /* Color de fondo para elementos elevados (sidebar, inputs) */
+    
+    /* Colores de acento */
+    --primary: #00d4aa;          /* Verde menta - color principal de la marca */
+    --expense: #ff6b6b;          /* Rojo coral - usado para representar gastos */
+    --income: #ffd93d;           /* Amarillo dorado - usado para representar ingresos */
+    
+    /* Colores de texto */
+    --text-primary: #ffffff;      /* Color principal del texto (blanco) */
+    --text-secondary: #888888;  /* Color secundario del texto (gris) */
+    
+    /* Color de bordes */
+    --border: #333333;           /* Color de los bordes de elementos */
+}
+
+/* -------------------------------------------------------------------------- */
+/* ESTILOS GENERALES DEL BODY                                                 */
+/* Configura la fuente y colores base para toda la página                     */
+/* -------------------------------------------------------------------------- */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; /* Fuente del sistema */
+    background-color: var(--bg-dark);  /* Color de fondo oscuro */
+    color: var(--text-primary);       /* Texto blanco por defecto */
+    min-height: 100vh;                /* Ocupa toda la altura de la ventana */
+}
+
+/* ==========================================================================
+   PÁGINA DE LOGIN
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------- */
+/* CONTENEDOR PRINCIPAL DEL LOGIN - Usa Flexbox para centrar                 */
+/* display: flex + justify-content + align-items = centrado perfecto         */
+/* -------------------------------------------------------------------------- */
+.login-page {
+    display: flex;                    /* Activa Flexbox */
+    justify-content: center;          /* Centra horizontalmente */
+    align-items: center;              /* Centra verticalmente */
+    min-height: 100vh;               /* Altura mínima igual a la ventana */
+    background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1a2e 100%); /* Degradado de fondo */
+    padding: 20px;
+}
+
+/* Contenedor interno para limitar el ancho máximo */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 450px;                 /* Ancho máximo del card de login */
+}
+
+/* -------------------------------------------------------------------------- */
+/* TARJETA DE LOGIN - El card principal que contiene el formulario           */
+/* -------------------------------------------------------------------------- */
+.login-card {
+    background: var(--surface);      /* Fondo oscuro de superficie */
+    border-radius: 16px;              /* Bordes redondeados */
+    padding: 48px 40px;               /* Espaciado interno */
+    width: 100%;                      /* Ocupa todo el ancho disponible */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); /* Sombra sutil */
+    border: 1px solid var(--border); /* Borde sutil */
+}
+
+/* -------------------------------------------------------------------------- */
+/* ENCABEZADO DEL LOGIN - Logo y subtítulo                                   */
+/* -------------------------------------------------------------------------- */
+.login-header {
+    text-align: center;               /* Centra el texto */
+    margin-bottom: 32px;              /* Espacio debajo del encabezado */
+}
+
+/* Contenedor del logo - usa Flexbox para alinear icono y texto */
+.logo {
+    display: flex;
+    align-items: center;              /* Alinea verticalmente */
+    justify-content: center;          /* Centra horizontalmente */
+    gap: 12px;                        /* Espacio entre icono y texto */
+    margin-bottom: 8px;
+}
+
+.logo-icon {
+    font-size: 2rem;                 /* Tamaño grande del emoji */
+}
+
+.logo h1 {
+    font-size: 1.75rem;
+    font-weight: 700;                /* Negrita fuerte */
+    color: var(--primary);           /* Color verde menta */
+    letter-spacing: -0.5px;
+}
+
+.login-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* FORMULARIO DE LOGIN                                                       */
+/* Usa flex-direction: column para apilar los campos verticalmente          */
+/* -------------------------------------------------------------------------- */
+.login-form {
+    display: flex;
+    flex-direction: column;           /* Apila los elementos verticalmente */
+    gap: 20px;                       /* Espacio entre cada campo */
+}
+
+/* Grupos de campos (label + input) */
+.form-group {
+    display: flex;
+    flex-direction: column;           /* Label encima del input */
+    gap: 8px;                        /* Espacio entre label e input */
+}
+
+.form-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-transform: uppercase;       /* Texto en mayúsculas */
+    letter-spacing: 1px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* INPUTS DEL FORMULARIO                                                      */
+/* Contenedor con posición relative para posicionar el icono dentro          */
+/* -------------------------------------------------------------------------- */
+.input-wrapper {
+    position: relative;              /* Permite posicionar el icono absolutamente */
+    display: flex;
+    align-items: center;
+}
+
+/* Icono dentro del input (emoji a la izquierda) */
+.input-icon {
+    position: absolute;             /* Posición absoluta dentro del relative */
+    left: 14px;                     /* Espacio desde la izquierda */
+    font-size: 1rem;
+    opacity: 0.6;                   /* Semi-transparente */
+}
+
+/* Estilos del campo de texto */
+.input-wrapper input {
+    width: 100%;                    /* Ocupa todo el ancho */
+    padding: 14px 14px 14px 42px;  /* padding-left: 42px espacio para el icono */
+    background: var(--surface-elevated); /* Fondo ligeramente más claro */
+    border: 1px solid var(--border);
+    border-radius: 10px;            /* Bordes redondeados */
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;      /* Transición suave para cambios */
+}
+
+/* Placeholder (texto de ejemplo) */
+.input-wrapper input::placeholder {
+    color: var(--text-secondary);
+}
+
+/* Estado focus (cuando el usuario hace clic en el input) */
+.input-wrapper input:focus {
+    outline: none;                  /* Quita el borde azul por defecto */
+    border-color: var(--primary);    /* Borde verde cuando está activo */
+    box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.15); /* Brillo verde alrededor */
+}
+
+/* -------------------------------------------------------------------------- */
+/* BOTÓN DE LOGIN                                                            */
+/* Botón grande que ocupa todo el ancho                                       */
+/* -------------------------------------------------------------------------- */
+.login-btn {
+    display: block;
+    width: 100%;                    /* Botón que ocupa todo el ancho */
+    padding: 16px;                  /* Espaciado interno grande */
+    background: var(--primary);    /* Fondo verde menta */
+    color: var(--bg-dark);          /* Texto oscuro para contraste */
+    font-size: 1rem;
+    font-weight: 600;              /* Semi-negrita */
+    text-align: center;
+    text-decoration: none;         /* Quita el subrayado de enlace */
+    border-radius: 10px;
+    margin-top: 12px;
+    transition: all 0.3s ease;      /* Animación suave al pasar el mouse */
+}
+
+/* Efecto hover (cuando el mouse está sobre el botón) */
+.login-btn:hover {
+    transform: translateY(-2px);    /* Se eleva ligeramente */
+    box-shadow: 0 4px 20px rgba(0, 212, 170, 0.4); /* Sombra verde brillante */
+    filter: brightness(1.1);       /* Un poco más brillante */
+}
+
+/* -------------------------------------------------------------------------- */
+/* PIE DE PÁGINA DEL LOGIN                                                   */
+/* -------------------------------------------------------------------------- */
+.login-footer {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   PÁGINA DEL DASHBOARD
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------- */
+/* CONTENEDOR PRINCIPAL DEL DASHBOARD - Layout de dos columnas               */
+/* Usa display: flex para poner sidebar y contenido lado a lado             */
+/* -------------------------------------------------------------------------- */
+.dashboard-page {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* -------------------------------------------------------------------------- */
+/* SIDEBAR - Panel lateral izquierdo                                           */
+/* Ancho fijo de 260px, posicionado fijo para que no se mueva al hacer scroll */
+/* Usa flexbox para organizar su contenido internamente                       */
+/* -------------------------------------------------------------------------- */
+.sidebar {
+    width: 260px;                   /* Ancho fijo del sidebar */
+    background: var(--surface-elevated); /* Fondo ligeramente más claro */
+    border-right: 1px solid var(--border); /* Borde derecho */
+    display: flex;                  /* Activa Flexbox */
+    flex-direction: column;        /* Organiza los elementos verticalmente */
+    position: fixed;                /* Se mantiene fijo al hacer scroll */
+    height: 100vh;                  /* Ocupa toda la altura */
+    padding: 24px 0;                 /* Padding vertical */
+}
+
+/* Encabezado del sidebar con el logo */
+.sidebar-header {
+    padding: 0 24px 24px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+}
+
+.sidebar-header .logo {
+    justify-content: flex-start;   /* Logo alineado a la izquierda */
+}
+
+.sidebar-header .logo h1 {
+    font-size: 1.5rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* NAVEGACIÓN DEL SIDEBAR                                                    */
+/* Lista de enlaces menu - usa flexbox para organizar verticalmente          */
+/* -------------------------------------------------------------------------- */
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;        /* Elementos apuestos verticalmente */
+    gap: 4px;                      /* Espacio pequeño entre opciones */
+    padding: 0 12px;
+    flex: 1;                       /* Ocupa el espacio disponible */
+}
+
+/* -------------------------------------------------------------------------- */
+/* ITEMS DE NAVEGACIÓN                                                       */
+/* Cada opción del menú - con estados hover y active                           */
+/* -------------------------------------------------------------------------- */
+.nav-item {
+    display: flex;
+    align-items: center;          /* Icono y texto alineados verticalmente */
+    gap: 12px;                     /* Espacio entre icono y texto */
+    padding: 14px 16px;            /* Área clickeable amplia */
+    color: var(--text-secondary); /* Color gris por defecto */
+    text-decoration: none;        /* Sin subrayado */
+    border-radius: 10px;
+    transition: all 0.3s ease;     /* Transición suave */
+    position: relative;           /* Para posicionar el indicador activo */
+}
+
+/* Estado hover - cuando el mouse pasa sobre la opción */
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.05); /* Fondo ligeramente más claro */
+    color: var(--text-primary);    /* Texto blanco */
+}
+
+/* Estado active - opción actualmente seleccionada */
+.nav-item.active {
+    background: rgba(0, 212, 170, 0.1); /* Fondo verde muy sutil */
+    color: var(--primary);        /* Texto verde */
+}
+
+/* Indicador visual de la opción activa (barra verde a la izquierda) */
+.nav-item.active::before {
+    content: '';                   /* Elemento vacío */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%); /* Centra verticalmente */
+    width: 3px;                    /* Ancho de la barra */
+    height: 24px;                 /* Altura de la barra */
+    background: var(--primary);
+    border-radius: 0 4px 4px 0;   /* Solo redondea la derecha */
+}
+
+.nav-icon {
+    font-size: 1.1rem;
+}
+
+.nav-text {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* -------------------------------------------------------------------------- */
+/* PIE DEL SIDEBAR - Botón de cierre de sesión                               */
+/* -------------------------------------------------------------------------- */
+.sidebar-footer {
+    padding: 24px 12px 0;
+    border-top: 1px solid var(--border);
+    margin-top: auto;              /* Empuja hacia abajo si hay espacio */
+}
+
+.logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    color: var(--expense);         /* Color rojo para indicar acción destructiva */
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: rgba(255, 107, 107, 0.1); /* Fondo rojo muy sutil */
+}
+
+/* ==========================================================================
+   ÁREA PRINCIPAL DEL DASHBOARD
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------- */
+/* CONTENIDO PRINCIPAL                                                       */
+/* Área a la derecha del sidebar - ocupa el espacio restante                 */
+/* -------------------------------------------------------------------------- */
+.main-content {
+    flex: 1;                       /* Ocupa todo el espacio disponible */
+    margin-left: 260px;           /* Margen igual al ancho del sidebar */
+    padding: 32px;                 /* Espaciado interno */
+}
+
+/* -------------------------------------------------------------------------- */
+/* ENCABEZADO DEL CONTENIDO PRINCIPAL                                        */
+/* Título de la página + información del usuario                              */
+/* -------------------------------------------------------------------------- */
+.main-header {
+    display: flex;
+    justify-content: space-between; /* Título a izquierda, usuario a derecha */
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.main-header h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+/* -------------------------------------------------------------------------- */
+/* INFORMACIÓN DEL USUARIO                                                   */
+/* Muestra el avatar y nombre del usuario conectado                           */
+/* -------------------------------------------------------------------------- */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    background: var(--surface);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+.user-avatar {
+    font-size: 1.2rem;
+}
+
+.user-name {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   GRILLA DE TARJETAS - CSS GRID
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------- */
+/* GRILLA PRINCIPAL                                                          */
+/* Usa CSS Grid para crear un layout de 3 columnas iguales                    */
+/* grid-template-columns: repeat(3, 1fr) = 3 columnas del mismo tamaño        */
+/* -------------------------------------------------------------------------- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual ancho */
+    gap: 24px;                             /* Espacio entre tarjetas */
+}
+
+/* ==========================================================================
+   TARJETAS DEL DASHBOARD
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------- */
+/* ESTILO BASE DE TARJETA                                                    */
+/* Aplica a todas las tarjetas del dashboard                                  */
+/* -------------------------------------------------------------------------- */
+.card {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;     /* Animación suave */
+}
+
+/* Efecto hover - la tarjeta se eleva ligeramente */
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* -------------------------------------------------------------------------- */
+/* ENCABEZADO DE TARJETA                                                    */
+/* Icono + título de la tarjeta                                              */
+/* -------------------------------------------------------------------------- */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.card-icon {
+    font-size: 1.2rem;
+}
+
+.card-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;    /* Mayúsculas */
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+}
+
+/* -------------------------------------------------------------------------- */
+/* VALOR NUMÉRICO DE LA TARJETA                                             */
+/* El número principal que se muestra (ej: $12,450.00)                       */
+/* -------------------------------------------------------------------------- */
+.card-value {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* PIE DE TARJETA                                                            */
+/* Muestra tendencia (subida/bajada) respecto al mes anterior               */
+/* -------------------------------------------------------------------------- */
+.card-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Indicadores de tendencia */
+.trend {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.trend.positive {
+    background: rgba(0, 212, 170, 0.15); /* Verde para tendencias positivas */
+    color: var(--primary);
+}
+
+.trend.negative {
+    background: rgba(255, 107, 107, 0.15); /* Rojo para tendencias negativas */
+    color: var(--expense);
+}
+
+.trend-text {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+/* -------------------------------------------------------------------------- */
+/* COLORES ESPECÍFICOS POR TIPO DE TARJETA                                  */
+/* Cada tipo de tarjeta tiene su propio color de valor                       */
+/* -------------------------------------------------------------------------- */
+.balance-card .card-value {
+    color: var(--primary);        /* Verde para saldo total */
+}
+
+.income-card .card-value {
+    color: var(--income);         /* Amarillo para ingresos */
+}
+
+.expense-card .card-value {
+    color: var(--expense);         /* Rojo para gastos */
+}
+
+/* ==========================================================================
+   TARJETA DE GRÁFICO DE BARRAS
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------- */
+/* CONTENEDOR DEL GRÁFICO                                                    */
+/* Flexbox para alinear las barras horizontalmente                           */
+/* align-items: flex-end = las barras se alinean por abajo                   */
+/* -------------------------------------------------------------------------- */
+.chart-placeholder {
+    display: flex;
+    align-items: flex-end;         /* Bars start from bottom */
+    justify-content: space-between; /* Even spacing between bars */
+    height: 120px;
+    padding-top: 20px;
+}
+
+/* Estilo de cada barra individual */
+.bar {
+    width: 12%;                     /* Ancho de cada barra */
+    background: linear-gradient(to top, var(--primary), rgba(0, 212, 170, 0.3));
+    border-radius: 6px 6px 0 0;    /* Solo arriba redondeado */
+    transition: all 0.3s ease;
+}
+
+.bar:hover {
+    filter: brightness(1.2);       /* Más brillante al pasar el mouse */
+}
+
+/* Alturas predefinidas para cada barra (simulando datos) */
+.bar-1 { height: 45%; }
+.bar-2 { height: 70%; }
+.bar-3 { height: 55%; }
+.bar-4 { height: 90%; }
+.bar-5 { height: 65%; }
+.bar-6 { height: 80%; }
+.bar-7 { height: 50%; }
+
+/* ==========================================================================
+   TARJETA DE LISTA DE TRANSACCIONES
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------- */
+/* LISTA DE TRANSACCIONES                                                    */
+/* Lista sin viñetas (list-style: none) con separación entre ítems           */
+/* -------------------------------------------------------------------------- */
+.transaction-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* ÍTEM DE TRANSACCIÓN                                                       */
+/* Cada fila de la lista - muestra icono, nombre y monto                    */
+/* -------------------------------------------------------------------------- */
+.transaction-item {
+    display: flex;
+    align-items: center;          /* Todo alineado verticalmente */
+    padding: 12px;
+    background: var(--surface-elevated);
+    border-radius: 10px;
+    gap: 12px;
+}
+
+.trans-icon {
+    font-size: 1.1rem;
+}
+
+.trans-name {
+    flex: 1;                       /* Ocupa el espacio disponible */
+    font-size: 0.9rem;
+}
+
+/* Montos - positivos o negativos */
+.trans-amount {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.trans-amount.positive {
+    color: var(--primary);        /* Verde para ingresos */
+}
+
+.trans-amount.negative {
+    color: var(--expense);        /* Rojo para gastos */
+}
+
+/* ==========================================================================
+   TARJETA DE PRESUPUESTO - BARRAS DE PROGRESO
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------- */
+/* ÍTEM DE PRESUPUESTO                                                       */
+/* Cada categoría presupuestaria con su barra de progreso                     */
+/* -------------------------------------------------------------------------- */
+.budget-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.budget-item:last-child {
+    margin-bottom: 0;             /* Quita margen al último ítem */
+}
+
+.budget-label {
+    width: 80px;                  /* Ancho fijo para las etiquetas */
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* -------------------------------------------------------------------------- */
+/* BARRA DE PROGRESO                                                         */
+/* Contenedor de la barra que muestra el porcentaje usado                   */
+/* -------------------------------------------------------------------------- */
+.progress-bar {
+    flex: 1;                      /* Ocupa el espacio disponible */
+    height: 8px;
+    background: var(--surface-elevated);
+    border-radius: 4px;
+    overflow: hidden;             /* Oculta el contenido que sobresale */
+}
+
+/* Relleno de la barra de progreso */
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--income));
+    border-radius: 4px;
+    transition: width 0.5s ease; /* Animación suave al cambiar ancho */
+}
+
+/* Porcentaje mostrado a la derecha */
+.budget-value {
+    width: 40px;
+    text-align: right;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* ==========================================================================
+   DISEÑO RESPONSIVE
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------- */
+/* Tablet - Pantallas entre 768px y 1200px                                   */
+/* Cambia a 2 columnas en lugar de 3                                         */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Móvil - Pantallas menores a 768px                                         */
+/* Oculta el sidebar y muestra todo en 1 columna                             */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    /* El sidebar ya no se muestra en móvil */
+    .sidebar {
+        display: none;
+    }
+    
+    /* El contenido principal ocupa todo el ancho */
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+    
+    /* Las tarjetas se muestran en 1 columna */
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* El encabezado se reorganiza verticalmente */
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+}

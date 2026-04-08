@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Portal de noticias - Informate hoy" />
+  <title>InformateCo - Noticias de Colombia y el Mundo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="shortcut icon" href="img/favicon-Noticiero.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" role="banner">
+    <div class="header-top">
+      <span class="fecha" aria-label="Fecha de hoy">Domingo, 15 de Marzo de 2026</span>
+      <span class="edicion">Edición Digital</span>
+    </div>
+    <div class="header-logo">
+      <h1 class="logo">
+        <span class="logo-principal">Informat</span><span class="logo-acento">e</span><span class="logo-co">Co</span>
+      </h1>
+      <p class="logo-slogan">Noticias de Colombia y el Mundo</p>
+    </div>
+    <div class="header-breaking" role="marquee" aria-label="Noticias de última hora">
+      <span class="breaking-label">ÚLTIMA HORA</span>
+      <span class="breaking-text">El presidente firmó nuevo decreto económico &nbsp;·&nbsp; Colombia enfrenta ola de calor este fin de semana &nbsp;·&nbsp; Dólar cierra en $4.050 &nbsp;·&nbsp; Selección Colombia convocada para eliminatorias</span>
+    </div>
+  </header>
+
+  <!-- ===== NAVEGACIÓN ===== -->
+  <nav class="navbar" aria-label="Navegación principal">
+    <ul class="nav-lista" role="list">
+      <li><a href="#" class="nav-link nav-link--activo" aria-current="page">Inicio</a></li>
+      <li><a href="#" class="nav-link">Colombia</a></li>
+      <li><a href="#" class="nav-link">Mundo</a></li>
+      <li><a href="#" class="nav-link">Economía</a></li>
+      <li><a href="#" class="nav-link">Tecnología</a></li>
+      <li><a href="#" class="nav-link">Deportes</a></li>
+      <li><a href="#" class="nav-link">Cultura</a></li>
+      <li><a href="#" class="nav-link">Opinión</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== LAYOUT PRINCIPAL ===== -->
+  <div class="layout-wrapper">
+
+    <!-- ===== MAIN ===== -->
+    <main class="main-content" id="contenido-principal" role="main">
+
+      <!-- Noticia destacada -->
+      <section class="seccion-destacada" aria-label="Noticia principal">
+        <article class="articulo articulo--destacado">
+          <figure class="articulo-imagen">
+            <img src="img/Paris Cumbre Climatica.jpg" alt="Delegados en la Cumbre Climática de París 2025 firmando acuerdos" loading="eager" width="600" height="340"/>
+            <figcaption>Delegados de más de 90 países en la Cumbre Climática — AFP</figcaption>
+          </figure>
+          <div class="articulo-contenido">
+            <span class="articulo-categoria categoria--verde">Medio Ambiente</span>
+            <h2 class="articulo-titulo articulo-titulo--grande">
+              <a href="#">Cumbre climática alcanza acuerdos históricos: reducción del 60% en emisiones para 2035</a>
+            </h2>
+            <p class="articulo-bajada">
+              Líderes de 94 naciones firmaron el Pacto de París Renovado, considerado el compromiso medioambiental más ambicioso de la historia. Los acuerdos incluyen fondos de emergencia para países en desarrollo y sanciones comerciales para quienes incumplan.
+            </p>
+            <footer class="articulo-meta">
+              <span class="articulo-autor">Por <strong>Laura Méndez</strong></span>
+              <time datetime="2026-03-15T08:30">Hoy, 8:30 a.m.</time>
+              <a href="#" class="articulo-leermas" aria-label="Leer más sobre la Cumbre Climática">Leer más →</a>
+            </footer>
+          </div>
+        </article>
+      </section>
+
+      <!-- Grilla de noticias secundarias -->
+      <section class="seccion-grilla" aria-label="Noticias recientes">
+        <h2 class="seccion-titulo">Lo más reciente</h2>
+
+        <div class="grilla-noticias">
+
+          <article class="articulo articulo--tarjeta">
+            <figure class="articulo-imagen">
+              <img src="img/Pantallas IA.jpg" alt="Pantallas mostrando interfaces de inteligencia artificial en una feria tecnológica" loading="lazy" width="600" height="340"/>
+            </figure>
+            <div class="articulo-contenido">
+              <span class="articulo-categoria categoria--azul">Tecnología</span>
+              <h3 class="articulo-titulo">
+                <a href="#">La inteligencia artificial ya gestiona el 30% de los empleos administrativos en Latinoamérica</a>
+              </h3>
+              <p class="articulo-descripcion">Un informe del BID revela que la automatización avanzó más rápido de lo esperado en la región, generando debate sobre regulación laboral.</p>
+              <footer class="articulo-meta">
+                <span class="articulo-autor">Carlos Ruiz</span>
+                <time datetime="2026-03-15T07:00">7:00 a.m.</time>
+              </footer>
+            </div>
+          </article>
+
+          <article class="articulo articulo--tarjeta">
+            <figure class="articulo-imagen">
+              <img src="img/Grafico de Barras.jpg" alt="Gráfico de barras mostrando alza en los mercados financieros" loading="lazy" width="600" height="340"/>
+            </figure>
+            <div class="articulo-contenido">
+              <span class="articulo-categoria categoria--rojo">Economía</span>
+              <h3 class="articulo-titulo">
+                <a href="#">Bolsas latinoamericanas registran su mejor semana en dos años impulsadas por acuerdos comerciales</a>
+              </h3>
+              <p class="articulo-descripcion">El índice COLCAP subió un 4.3% mientras inversores reaccionaron positivamente a los nuevos tratados con la Unión Europea.</p>
+              <footer class="articulo-meta">
+                <span class="articulo-autor">Paola Herrera</span>
+                <time datetime="2026-03-14T18:45">Ayer, 6:45 p.m.</time>
+              </footer>
+            </div>
+          </article>
+
+          <article class="articulo articulo--tarjeta">
+            <figure class="articulo-imagen">
+              <img src="img/Cientificos Cancer.jpg" alt="Científicos en laboratorio trabajando en investigación contra el cáncer" loading="lazy" width="600" height="340"/>
+            </figure>
+            <div class="articulo-contenido">
+              <span class="articulo-categoria categoria--morado">Ciencia</span>
+              <h3 class="articulo-titulo">
+                <a href="#">Investigadores colombianos logran reducir tumores en un 70% con nueva terapia génica</a>
+              </h3>
+              <p class="articulo-descripcion">El equipo de la Universidad de Antioquia publicó sus hallazgos en Nature Medicine, generando expectativa en la comunidad científica mundial.</p>
+              <footer class="articulo-meta">
+                <span class="articulo-autor">Dr. Andrés Cano</span>
+                <time datetime="2026-03-14T10:00">Ayer, 10:00 a.m.</time>
+              </footer>
+            </div>
+          </article>
+
+          <article class="articulo articulo--tarjeta">
+            <figure class="articulo-imagen">
+              <img src="img/Seleccion Colombia Celebrando.jpg"Jugadores de la selección Colombia celebrando clasificación al mundial" loading="lazy" width="400" height="260"/>
+            </figure>
+            <div class="articulo-contenido">
+              <span class="articulo-categoria categoria--verde">Deportes</span>
+              <h3 class="articulo-titulo">
+                <a href="#">Colombia sella su boleto al Mundial 2026 con contundente victoria sobre Uruguay</a>
+              </h3>
+              <p class="articulo-descripcion">Con goles de James y Díaz, la tricolor goleó 3-0 en el Estadio Metropolitano ante más de 47.000 espectadores.</p>
+              <footer class="articulo-meta">
+                <span class="articulo-autor">Juliana Torres</span>
+                <time datetime="2026-03-13T22:00">13 mar, 10 p.m.</time>
+              </footer>
+            </div>
+          </article>
+
+          <article class="articulo articulo--tarjeta">
+            <figure class="articulo-imagen">
+              <img src="img/Festival de Cine Cartagena.jpg" alt="Cartel del Festival Internacional de Cine de Cartagena" loading="lazy" width="400" height="260"/>
+            </figure>
+            <div class="articulo-contenido">
+              <span class="articulo-categoria categoria--amarillo">Cultura</span>
+              <h3 class="articulo-titulo">
+                <a href="#">El Festival Internacional de Cine de Cartagena abre con récord de películas latinoamericanas</a>
+              </h3>
+              <p class="articulo-descripcion">Más de 120 producciones de 18 países compiten este año en la edición número 66 del FICCI, con Colombia como invitada especial.</p>
+              <footer class="articulo-meta">
+                <span class="articulo-autor">Valeria Ospina</span>
+                <time datetime="2026-03-15T09:15">Hoy, 9:15 a.m.</time>
+              </footer>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Sección de opinión -->
+      <section class="seccion-opinion" aria-label="Columnas de opinión">
+        <h2 class="seccion-titulo">Opinión</h2>
+        <div class="opinion-grid">
+          <article class="opinion-card">
+            <div class="opinion-autor-img" aria-hidden="true">MR</div>
+            <div>
+              <h4><a href="#">¿Está Colombia preparada para la era de la IA?</a></h4>
+              <span class="opinion-autor-nombre">Miguel Rodríguez</span>
+            </div>
+          </article>
+          <article class="opinion-card">
+            <div class="opinion-autor-img" aria-hidden="true">SP</div>
+            <div>
+              <h4><a href="#">La paz total: dos años después</a></h4>
+              <span class="opinion-autor-nombre">Sandra Puentes</span>
+            </div>
+          </article>
+          <article class="opinion-card">
+            <div class="opinion-autor-img" aria-hidden="true">JL</div>
+            <div>
+              <h4><a href="#">Bogotá necesita más que un metro</a></h4>
+              <span class="opinion-autor-nombre">Jorge Leal</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== ASIDE (barra lateral) ===== -->
+    <aside class="sidebar" aria-label="Contenido complementario">
+
+      <section class="sidebar-widget" aria-label="Noticias más leídas">
+        <h3 class="widget-titulo">Más leídas</h3>
+        <ol class="widget-lista" role="list">
+          <li class="widget-item">
+            <span class="item-numero" aria-hidden="true">01</span>
+            <a href="#" class="item-link">Nuevo impuesto a plataformas digitales genera polémica en el Congreso</a>
+          </li>
+          <li class="widget-item">
+            <span class="item-numero" aria-hidden="true">02</span>
+            <a href="#" class="item-link">Terremoto de 6.1 grados sacude el Pacífico colombiano sin víctimas</a>
+          </li>
+          <li class="widget-item">
+            <span class="item-numero" aria-hidden="true">03</span>
+            <a href="#" class="item-link">Precio de los aguacates sube 40% en Bogotá este mes de marzo</a>
+          </li>
+          <li class="widget-item">
+            <span class="item-numero" aria-hidden="true">04</span>
+            <a href="#" class="item-link">MinEducación anuncia reforma del calendario escolar para 2027</a>
+          </li>
+          <li class="widget-item">
+            <span class="item-numero" aria-hidden="true">05</span>
+            <a href="#" class="item-link">Hospital Universitario de Medellín estrena sistema de diagnóstico con IA</a>
+          </li>
+        </ol>
+      </section>
+
+      <section class="sidebar-widget widget-clima" aria-label="Clima en Colombia">
+        <h3 class="widget-titulo">Clima hoy</h3>
+        <div class="clima-grid">
+          <div class="clima-ciudad">
+            <span class="clima-nombre">Bogotá</span>
+            <span class="clima-temp">14°C</span>
+            <span class="clima-desc">☁️ Nublado</span>
+          </div>
+          <div class="clima-ciudad">
+            <span class="clima-nombre">Medellín</span>
+            <span class="clima-temp">22°C</span>
+            <span class="clima-desc">🌤️ Parcial</span>
+          </div>
+          <div class="clima-ciudad">
+            <span class="clima-nombre">Cali</span>
+            <span class="clima-temp">28°C</span>
+            <span class="clima-desc">☀️ Soleado</span>
+          </div>
+          <div class="clima-ciudad">
+            <span class="clima-nombre">Cartagena</span>
+            <span class="clima-temp">33°C</span>
+            <span class="clima-desc">🌤️ Cálido</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="sidebar-widget" aria-label="Newsletter">
+        <h3 class="widget-titulo">Recibe las noticias</h3>
+        <p class="widget-texto">Suscríbete y recibe el resumen diario en tu correo.</p>
+        <form class="newsletter-form" action="#" method="post" novalidate>
+          <label for="email-newsletter" class="sr-only">Correo electrónico</label>
+          <input
+            type="email"
+            id="email-newsletter"
+            name="email"
+            class="newsletter-input"
+            placeholder="tucorreo@email.com"
+            required
+            aria-required="true"
+          />
+          <button type="submit" class="newsletter-btn">Suscribirme</button>
+        </form>
+      </section>
+
+      <section class="sidebar-widget" aria-label="Redes sociales">
+        <h3 class="widget-titulo">Síguenos</h3>
+        <div class="redes-grid">
+          <a href="#" class="red-social red--twitter" aria-label="Twitter de InformateCo"><i class="bi bi-twitter"></i> Twitter</a>
+          <a href="#" class="red-social red--instagram" aria-label="Instagram de InformateCo"><i class="bi bi-instagram"></i> Instagram</a>
+          <a href="#" class="red-social red--facebook" aria-label="Facebook de InformateCo"><i class="bi bi-facebook"></i> Facebook</a>
+          <a href="#" class="red-social red--youtube" aria-label="YouTube de InformateCo"><i class="bi bi-youtube"></i> YouTube</a>
+        </div>
+      </section>
+
+    </aside>
+
+  </div><!-- fin layout-wrapper -->
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4 class="footer-titulo">InformateCo</h4>
+        <p class="footer-texto">Portal de noticias independiente fundado en 2021. Comprometidos con el periodismo veraz y la información de calidad para todos los colombianos.</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-titulo">Secciones</h4>
+        <ul class="footer-lista" role="list">
+          <li><a href="#">Colombia</a></li>
+          <li><a href="#">Mundo</a></li>
+          <li><a href="#">Economía</a></li>
+          <li><a href="#">Deportes</a></li>
+          <li><a href="#">Tecnología</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-titulo">La empresa</h4>
+        <ul class="footer-lista" role="list">
+          <li><a href="#">Quiénes somos</a></li>
+          <li><a href="#">Trabaja con nosotros</a></li>
+          <li><a href="#">Contáctenos</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-titulo">Contacto</h4>
+        <address class="footer-contacto">
+          <p>📍 Calle 72 #10-34, Bogotá</p>
+          <p>📞 (601) 555-0192</p>
+          <p>✉️ redaccion@informateco.co</p>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 InformateCo. Todos los derechos reservados.</p>
+      <p class="footer-credito">Desarrollado por estudiante de Computación Gráfica — UCPR</p>
+    </div>
+  </footer>
+
+</body>
+</html>
