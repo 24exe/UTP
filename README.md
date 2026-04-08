@@ -51,6 +51,7 @@ Por Carlos Eduardo Grisales Restrepo.
   - *Subject Code/ Código de la Materia: IS773*
   - *Teacher/Docente: Jovanny Bedoya Guapacha* **(CURSANDOLA)**
   - *Language/Lenguaje: VeryLog*
+  - *Software: Quartus*
   
 ## **TO DO LIST**
 1. Subir archivos del resto de materias.
