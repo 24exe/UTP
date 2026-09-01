@@ -41,15 +41,15 @@ Por Carlos Eduardo Grisales Restrepo.
   - *Language/Lenguaje: Python*
 - ### **Computer Graphics / Computación Grafica 🎨​**
   - *Subject Code/ Código de la Materia: IS623*
-  - *Teacher/Docente:   Andres Felipe Ramirez Correa* **(CURSANDOLA)**
+  - *Teacher/Docente:   Andres Felipe Ramirez Correa* **(⭐⭐⭐⭐)**
   - *Language/Lenguaje: JavaScript*
 - ### ** Data Bases / Bases de Datos 📊**
   - *Subject Code/ Código de la Materia: IS644*
-  - *Teacher/Docente:   Cesar Manuel Castillo Rodriguez* **(CURSANDOLA)**
+  - *Teacher/Docente:   Cesar Manuel Castillo Rodriguez* **(⭐⭐⭐⭐⭐)**
   - *Language/Lenguaje: SQL*
 - ### **Digital Electronics Laboratory / Laboratorio de Electrónica Digital 💡**
   - *Subject Code/ Código de la Materia: IS773*
-  - *Teacher/Docente: Jovanny Bedoya Guapacha* **(CURSANDOLA)**
+  - *Teacher/Docente: Jovanny Bedoya Guapacha* **(⭐⭐⭐⭐)**
   - *Language/Lenguaje: VeryLog*
   - *Software: Quartus*
   
