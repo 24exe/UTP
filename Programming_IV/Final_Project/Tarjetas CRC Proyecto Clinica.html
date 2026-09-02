@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjetas CRC - Sistema de Clínica</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .crc-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 3px solid #e0e0e0;
+        }
+
+        .crc-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px solid #3498db;
+        }
+
+        .card-header h2 {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+
+        .card-type {
+            font-size: 0.9em;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .card-body {
+            padding: 0;
+        }
+
+        .section {
+            padding: 20px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title::before {
+            content: "▸";
+            color: #3498db;
+            font-size: 1.3em;
+        }
+
+        .section-content {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .list-item {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .list-item::before {
+            content: "•";
+            color: #3498db;
+            font-weight: bold;
+            position: absolute;
+            left: 5px;
+        }
+
+        .attributes-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 8px;
+        }
+
+        .attribute-item {
+            background: #ecf0f1;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #2c3e50;
+        }
+
+        .methods-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .method-item {
+            background: #e8f5e9;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #27ae60;
+            border-left: 3px solid #27ae60;
+        }
+
+        .collaborations-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .collab-badge {
+            background: #fff3cd;
+            color: #856404;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+            border: 2px solid #ffc107;
+        }
+
+        .interface-card .card-header {
+            background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+            border-bottom-color: #9b59b6;
+        }
+
+        .module-card .card-header {
+            background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
+            border-bottom-color: #1abc9c;
+        }
+
+        .gui-card .card-header {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            border-bottom-color: #e74c3c;
+        }
+
+        .legend {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .legend-title {
+            font-size: 1.3em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .legend-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .legend-color {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+        }
+
+        .color-class {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        }
+
+        .color-interface {
+            background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+        }
+
+        .color-module {
+            background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
+        }
+
+        .color-gui {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .legend-items {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📋 Tarjetas CRC</h1>
+        <p class="subtitle">Class-Responsibility-Collaboration Cards - Sistema de Gestión de Clínica</p>
+
+        <div class="cards-grid">
+            <!-- Persona -->
+            <div class="crc-card">
+                <div class="card-header">
+                    <h2>Persona</h2>
+                    <p class="card-type">Clase Base</p>
+                </div>
+                <div class="card-body">
+                    <div class="section">
+                        <div class="section-title">Responsabilidades</div>
+                        <div class="section-content">
+                            <div class="list-item">Almacenar información básica de una persona</div>
+                            <div class="list-item">Generar ID único automáticamente</div>
+                            <div class="list-item">Proporcionar getters/setters para atributos</div>
+                            <div class="list-item">Formatear información para presentación</div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="section-title">Atributos</div>
+                        <div class="attributes-list">
+                            <div class="attribute-item">_nombre</div>
+                            <div class="attribute-item">_documento</div>
+                            <div class="attribute-item">_id</div>
+                            <div class="attribute-item">_edad</div>
+                            <div class="attribute-item">_genero</div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="section-title">Colaboraciones</div>
+                        <div class="collaborations-list">
+                            <div class="collab-badge">uuid (generación ID)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paciente -->
+            <div class="crc-card">
+                <div class="card-header">
+                    <h2>Paciente</h2>
+                    <p class="card-type">Clase Concreta</p>
+                </div>
+                <div class="card-body">
+                    <div class="section">
+                        <div class="section-title">Responsabilidades</div>
+                        <div class="section-content">
+                            <div class="list-item">Extender Persona con historial médico</div>
+                            <div class="list-item">Guardar automáticamente en MongoDB</div>
+                            <div class="list-item">Implementar método registrar()</div>
+                            <div class="list-item">Permitir clonación de objetos</div>
+                            <div class="list-item">Convertir datos para persistencia</div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="section-title">Métodos Principales</div>
+                        <div class="methods-list">
+                            <div class="method-item">+ registrar(): str</div>
+                            <div class="method-item">+ clone(): Paciente</div>
+                            <div class="method-item">+ guardar_en_db(): void</div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="section-title">Colaboraciones</div>
+                        <div class="collaborations-list">
+                            <div class="collab-badge">Persona (hereda)</div>
+                            <div class="collab-badge">Registrable (impl.)</div>
+                            <div class="collab-badge">MongoDB</div>
+                            <div class="collab-badge">copy.deepcopy</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cita -->
+            <div class="crc-card">
+                <div class="card-header">
+                    <h2>Cita</h2>
+                    <p class="card-type">Clase de Datos</p>
+                </div>
+                <div class="card-body">
+                    <div class="section">
+                        <div class="section-title">Responsabilidades</div>
+                        <div class="section-content">
+                            <div class="list-item">Almacenar información de citas médicas</div>
+                            <div class="list-item">Relacionar doctor con paciente</div>
+                            <div class="list-item">Gestionar fecha de la cita</div>
+                            <div class="list-item">Proporcionar acceso a datos mediante properties</div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="section-title">Atributos</div>
+                        <div class="attributes-list">
+                            <div class="attribute-item">_nombre_Doctor</div>
+                            <div class="attribute-item">_id_doctor</div>
+                            <div class="attribute-item">_nombre_Paciente</div>
+                            <div class="attribute-item">_id_paciente</div>
+                            <div class="attribute-item">_fecha</div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="section-title">Colaboraciones</div>
+                        <div class="collaborations-list">
+                            <div class="collab-badge">Ninguna directa</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Registrable -->
+            <div class="crc-card interface-card">
+                <div class="card-header">
+                    <h2>Registrable</h2>
+                    <p class="card-type">Interfaz Abstracta</p>
+                </div>
+                <div class="card-body">
+                    <div class="section">
+                        <div class="section-title">Responsabilidades</div>
+                        <div class="section-content">
+                            <div class="list-item">Definir contrato para clases registrables</div>
+                            <div class="list-item">Forzar implementación de método registrar()</div>
+                            <div class="list-item">Establecer comportamiento común</div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="section-title">Métodos Abstractos</div>
+                        <div class="methods-list">
+                            <div class="method-item">+ registrar(): str</div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="section-title">Colaboraciones</div>
+                        <div class="collaborations-list">
+                            <div class="collab-badge">Paciente (implementa)</div>
+                            <div class="collab-badge">ABC (hereda)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agendable -->
+            <div class="crc-card interface-card">
+                <div class="card-header">
+                    <h2>Agendable</h2>
+                    <p class="card-type">Interfaz Abstracta</p>
+                </div>
+                <div class="card-body">
+                    <div class="section">
+                        <div class="section-title">Responsabilidades</div>
+                        <div class="section-content">
+                            <div class="list-item">Definir contrato para agendamiento</div>
+                            <div class="list-item">Forzar implementación de agendar_cita()</div>
+                            <div class="list-item">Estandarizar gestión de citas</div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="section-title">Métodos Abstractos</div>
+                        <div class="methods-list">
+                            <div class="method-item">+ agendar_cita(cita): void</div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="section-title">Colaboraciones</div>
+                        <div class="collaborations-list">
+                            <div class="collab-badge">No implementada</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MongoDB -->
+            <div class="crc-card module-card">
+                <div class="card-header">
+                    <h2>MongoDB</h2>
+                    <p class="card-type">Módulo de Persistencia</p>
+                </div>
+                <div class="card-body">
+                    <div class="section">
+                        <div class="section-title">Responsabilidades</div>
+                        <div class="section-content">
+                            <div class="list-item">Gestionar conexión única a MongoDB</div>
+                            <div class="list-item">Proporcionar operaciones CRUD genéricas</div>
+                            <div class="list-item">Validar datos antes de insertar</div>
+                            <div class="list-item">Evitar conflictos de horarios en citas</div>
+                            <div class="list-item">Eliminar citas al eliminar pacientes</div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="section-title">Funciones Principales</div>
+                        <div class="methods-list">
+                            <div class="method-item">ingresar_dato(coleccion, doc)</div>
+                            <div class="method-item">obtener_todos(coleccion)</div>
+                            <div class="method-item">actualizar(col, filtro, nuevos)</div>
+                            <div class="method-item">eliminar(coleccion, filtro)</div>
+                            <div class="method-item">agregar_cita(documento)</div>
+                            <div class="method-item">eliminar_cita(doc, fecha, hora)</div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="section-title">Colaboraciones</div>
+                        <div class="collaborations-list">
+                            <div class="collab-badge">pymongo.MongoClient</div>
+                            <div class="collab-badge">Todas las clases</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- App (GUI Principal) -->
+            <div class="crc-card gui-card">
+                <div class="card-header">
+                    <h2>App</h2>
+                    <p class="card-type">Ventana Principal (tk.Tk)</p>
+                </div>
+                <div class="card-body">
+                    <div class="section">
+                        <div class="section-title">Responsabilidades</div>
+                        <div class="section-content">
+                            <div class="list-item">Crear y gestionar ventana principal</div>
+                            <div class="list-item">Coordinar navegación entre vistas</div>
+                            <div class="list-item">Gestionar operaciones CRUD de pacientes</div>
+                            <div class="list-item">Mostrar consultas en tablas</div>
+                            <div class="list-item">Abrir ventanas modales</div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="section-title">Métodos Principales</div>
+                        <div class="methods-list">
+                            <div class="method-item">show_add_patient_form()</div>
+                            <div class="method-item">save_patient()</div>
+                            <div class="method-item">show_update_patient_form()</div>
+                            <div class="method-item">search_patient()</div>
+                            <div class="method-item">delete_patient()</div>
+                            <div class="method-item">show_consultar_pacientes()</div>
+                            <div class="method-item">show_consultar_doctor()</div>
+                            <div class="method-item">open_citas()</div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="section-title">Colaboraciones</div>
+                        <div class="collaborations-list">
+                            <div class="collab-badge">MongoDB</div>
+                            <div class="collab-badge">Paciente</div>
+                            <div class="collab-badge">Citas (ventana)</div>
+                            <div class="collab-badge">tkinter</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citas (Ventana Modal) -->
+            <div class="crc-card gui-card">
+                <div class="card-header">
+                    <h2>Citas</h2>
+                    <p class="card-type">Ventana Modal (tk.Toplevel)</p>
+                </div>
+                <div class="card-body">
+                    <div class="section">
+                        <div class="section-title">Responsabilidades</div>
+                        <div class="section-content">
+                            <div class="list-item">Mostrar formulario de registro de citas</div>
+                            <div class="list-item">Validar datos de entrada</div>
+                            <div class="list-item">Cargar lista de doctores disponibles</div>
+                            <div class="list-item">Registrar citas en la base de datos</div>
+                            <div class="list-item">Limpiar formulario después de guardar</div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="section-title">Métodos Principales</div>
+                        <div class="methods-list">
+                            <div class="method-item">cargar_doctores()</div>
+                            <div class="method-item">registrar_cita()</div>
+                            <div class="method-item">limpiar()</div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="section-title">Colaboraciones</div>
+                        <div class="collaborations-list">
+                            <div class="collab-badge">MongoDB</div>
+                            <div class="collab-badge">App (padre)</div>
+                            <div class="collab-badge">datetime</div>
+                            <div class="collab-badge">tkinter.ttk</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Leyenda -->
+        <div class="legend">
+            <div class="legend-title">🎨 Leyenda de Colores</div>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <div class="legend-color color-class"></div>
+                    <span><strong>Clases Regulares</strong> - Persona, Paciente, Cita</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color color-interface"></div>
+                    <span><strong>Interfaces</strong> - Registrable, Agendable</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color color-module"></div>
+                    <span><strong>Módulos</strong> - MongoDB (Persistencia)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color color-gui"></div>
+                    <span><strong>Interfaces Gráficas</strong> - App, Citas</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
