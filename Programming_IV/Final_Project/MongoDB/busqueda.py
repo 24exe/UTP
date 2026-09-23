@@ -3,7 +3,8 @@ from pymongo import MongoClient
 
 #configuración de conexión con atlas
 
-cliente=MongoClient("mongodb+srv://Admin_Edu:fNO3Zkzwcawvrz5Q@prueba.0djpasi.mongodb.net/")
+# Poner Link a MongoDB dentro de las comillas
+cliente=MongoClient("")
 
 db=cliente["db_test"]
 coleccion=db["estudiantes"]
