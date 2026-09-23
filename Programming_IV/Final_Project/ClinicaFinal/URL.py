@@ -1,6 +1,6 @@
 from pymongo import MongoClient
-
-url ="mongodb+srv://Admin_Edu:fNO3Zkzwcawvrz5Q@prueba.0djpasi.mongodb.net/"
+# Poner Link a MongoDB dentro de las comillas
+url =""
 
 client = MongoClient(url)
 
